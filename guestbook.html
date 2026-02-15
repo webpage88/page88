@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Guestbook</title>
+
+<script>
+function signGuestbook() {
+    var name = document.getElementById("name").value;
+    var message = document.getElementById("message").value;
+
+    var entry = document.createElement("p");
+    entry.innerHTML = "<b>" + name + "</b>: " + message;
+
+    document.getElementById("entries").appendChild(entry);
+
+    document.getElementById("name").value = "";
+    document.getElementById("message").value = "";
+}
+</script>
+
+</head>
+
+<body bgcolor="black" text="lime">
+
+<center>
+
+<h1>📖 SIGN MY GUESTBOOK 📖</h1>
+
+Name:<br>
+<input type="text" id="name"><br><br>
+
+Message:<br>
+<textarea id="message"></textarea><br><br>
+
+<button onclick="signGuestbook()">SIGN IT</button>
+
+<br><br>
+
+<div id="entries"></div>
+
+<br><br>
+
+<a href="home.html" target="topframe">⬅ BACK</a>
+
+</center>
+
+</body>
+</html>

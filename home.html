@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME OF PURE RADNESS</title>
+
+<style>
+body {
+    background-image: url('images/background.gif');
+    cursor: crosshair;
+    color: lime;
+    font-family: Comic Sans MS;
+}
+</style>
+
+<script>
+document.addEventListener("mousemove", function(e) {
+    var spark = document.createElement("div");
+    spark.innerHTML = "✨";
+    spark.style.position = "absolute";
+    spark.style.left = e.pageX + "px";
+    spark.style.top = e.pageY + "px";
+    spark.style.fontSize = "14px";
+    document.body.appendChild(spark);
+    setTimeout(function(){ spark.remove(); }, 500);
+});
+
+setInterval(function(){
+    document.body.style.backgroundColor =
+        document.body.style.backgroundColor == "black" ? "purple" : "black";
+}, 800);
+
+function subscribe() {
+    var email = document.getElementById("emailInput").value;
+
+    if(email == "") {
+        alert("YOU MUST ENTER AN EMAIL OR THE INTERNET BREAKS!!!");
+        return;
+    }
+
+    window.location.href = "mailto:page88music@gmail.com?subject=Mailing List Signup&body=Email: " + email;
+    alert("WELCOME TO THE RADICAL MAILING LIST!!! 🎉");
+}
+</script>
+
+</head>
+
+<body bgcolor="black">
+
+<center>
+
+<h1><font size="7" color="yellow">🔥 WELCOME TO PAGE88 🔥</font></h1>
+
+<marquee scrollamount="15">🚨 NEW CD OUT NOW 🚨 BUY IT BEFORE IT SELLS OUT 🚨</marquee>
+
+<br><br>
+
+<img src="images/fish.gif" width="120">
+<img src="images/flame.gif" width="100">
+<img src="images/tree.gif" width="120">
+
+<br><br>
+
+<h2>🎵 LISTEN TO MY HIT SINGLE 🎵</h2>
+
+<audio controls autoplay loop>
+    <source src="music/song1.mp3" type="audio/mpeg">
+</audio>
+
+<br><br>
+
+<h2>📬 JOIN MY MAILING LIST 📬</h2>
+
+<input type="text" id="emailInput" placeholder="ENTER YOUR EMAIL HERE">
+<br><br>
+<button onclick="subscribe()">🔥 SUBSCRIBE NOW 🔥</button>
+
+<br><br>
+
+<p>Visitor #
+<script>
+document.write(Math.floor(Math.random()*99999));
+</script>
+</p>
+
+<a href="guestbook.html" target="mainframe">
+<font size="5" color="cyan">📖 SIGN MY GUESTBOOK 📖</font>
+</a>
+
+</center>
+
+</body>
+</html>
